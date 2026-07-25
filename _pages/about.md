@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: 
+subtitle: Hi, I'm Danielle.
 
 profile:
   align: right
