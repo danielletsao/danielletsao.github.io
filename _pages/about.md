@@ -1,8 +1,7 @@
 ---
-layout: about
-title: about
+layout: default
+title: Hi, I'm Danielle.
 permalink: /
-subtitle: Hi, I'm Danielle.
 
 profile:
   align: right
