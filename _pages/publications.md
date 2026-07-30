@@ -30,7 +30,7 @@ sections:
         links: 
           - label: "arxiv"
             url: "https://www.biorxiv.org/content/10.1101/2022.02.19.481159v1"
-          - label: "published version"
+          - label: "publication"
             url: "https://doi.org/10.1093/bioadv/vbad030"
 ---
 
