@@ -28,7 +28,7 @@ I am a fourth year PhD student in Statistics at the University of Washington, ad
 
 \
 You can reach me at dltsao [at] uw [dot] edu. 
-<a href="https://github.com/danielletsao" target="_blank" rel="noopener noreferrer" style="color: var(--global-text-color); margin-left: 0.4rem; font-size: 1.5rem;"><i class="fa-brands fa-github"></i></a><a href="https://scholar.google.com/citations?user=yourid" target="_blank" rel="noopener noreferrer" style="color: var(--global-text-color); margin-left: 0.15rem; font-size: 1.4rem;"><i class="ai ai-google-scholar"></i></a>
+<a href="https://github.com/danielletsao" target="_blank" rel="noopener noreferrer" style="color: var(--global-text-color); margin-left: 0.4rem; font-size: 1.5rem;"><i class="fa-brands fa-github"></i></a><a href="https://scholar.google.com/citations?user=pPMkpakAAAAJ" target="_blank" rel="noopener noreferrer" style="color: var(--global-text-color); margin-left: 0.15rem; font-size: 1.4rem;"><i class="ai ai-google-scholar"></i></a>
 
 
 
