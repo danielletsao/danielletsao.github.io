@@ -2,11 +2,57 @@
 layout: default
 ---
 
-<article style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+<style>
+  .about-row {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    width: fit-content;
+  }
+  .about-image {
+    flex-shrink: 0;
+    margin-left: 1rem;
+    width: auto;
+    max-width: 280px;
+  }
+  .about-text {
+    margin-top: 0;
+    margin-bottom: 0;
+    max-width: 500px;
+  }
+
+  @media (max-width: 767.98px) {
+    .about-article {
+      min-height: auto !important;
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+    }
+    .about-row {
+      flex-direction: column !important;
+      width: 90% !important;
+      max-width: 400px !important;
+    }
+    .about-image {
+      margin-left: 0 !important;
+      margin-bottom: 1.5rem;
+      max-width: 220px !important;
+      width: 60% !important;
+    }
+    .about-text {
+      max-width: 100% !important;
+      text-align: center;
+    }
+  }
+</style>
+
+<article class="about-article" style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
   <div style="width: 100%;">
   {% if page.profile %}
-    <div style="display: flex; align-items: center; flex-direction: row-reverse; margin-left: auto; margin-right: auto; max-width: 900px; width: fit-content;">
-      <div class="profile" style="flex-shrink: 0; margin-left: 1rem; width: auto; max-width: 280px;">
+    <div class="about-row">
+      <div class="profile about-image">
         {% if page.profile.image %}
           {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
           {% if page.profile.image_circular %}
@@ -24,9 +70,7 @@ layout: default
           <div class="more-info">{{ page.profile.more_info }}</div>
         {% endif %}
       </div>
-      <div style="margin-top: 0; margin-bottom: 0; max-width: 500px;">
-        {{ content }}
-      </div>
+      <div class="about-text">{{ content }}</div>
     </div>
   {% else %}
     <div>{{ content }}</div>
