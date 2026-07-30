@@ -1,0 +1,60 @@
+---
+layout: default
+---
+
+<article style="min-height: 70vh; display: flex; align-items: center; justify-content: center;">
+  <div style="width: 100%;">
+  {% if page.profile %}
+    <div style="display: flex; align-items: center; flex-direction: row-reverse; margin-left: auto; margin-right: auto; max-width: 900px; width: fit-content;">
+      <div class="profile" style="flex-shrink: 0; margin-left: 1rem; width: auto; max-width: 280px;">
+        {% if page.profile.image %}
+          {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+          {% if page.profile.image_circular %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded-circle' %}
+          {% else %}
+            {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+          {% endif %}
+          {% capture sizes %}(min-width: {{site.max_width}}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+          {%
+            include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+            cache_bust=true
+          %}
+        {% endif %}
+        {% if page.profile.more_info %}
+          <div class="more-info">{{ page.profile.more_info }}</div>
+        {% endif %}
+      </div>
+      <div style="margin-top: 0; margin-bottom: 0; max-width: 500px;">
+        {{ content }}
+      </div>
+    </div>
+  {% else %}
+    <div>{{ content }}</div>
+  {% endif %}
+
+  <!-- News -->
+  {% if page.news and site.announcements.enabled %}
+    <h2>
+      <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+    </h2>
+    {% include news.liquid limit=true %}
+  {% endif %}
+
+  <!-- Selected papers -->
+  {% if page.selected_papers %}
+    <h2>
+      <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+    </h2>
+    {% include selected_papers.liquid %}
+  {% endif %}
+
+  <!-- Social -->
+  {% if page.social %}
+    <div class="social">
+      <div class="contact-icons">{% include social.liquid %}</div>
+
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
+  {% endif %}
+  </div>
+</article>
